@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from "react-bootstrap";
 import User from './user';
-import '../App.css';
+import '../../App.css';
 import {connect} from 'react-redux'
-import store from '../store'
-import {fetch_users,insertUser,updateUser} from '../store/actions/userActions'
+import store from '../../store'
+import {fetch_users,insertUser,updateUser} from '../../store/actions/userActions'
 function Users(props) {
-  const { userList,filmList } = props;
+  const { userList } = props;
   useEffect(() => {
     fetchItems(props);
   }, []);

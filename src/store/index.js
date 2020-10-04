@@ -1,11 +1,15 @@
 import {createStore, applyMiddleware, compose,combineReducers} from 'redux';
 import userActionReducer from './reducers/userReducer';
 import filmActionReducer from './reducers/filmAction';
+import productActionReducer from './reducers/productReducer';
+import cartActionReducer from './reducers/cartReducer';
 import thunk from 'redux-thunk'
 
 const allReducers = combineReducers({
     userList:userActionReducer,
-    filmList:filmActionReducer
+    filmList:filmActionReducer,
+    productList:productActionReducer,
+    cartList:cartActionReducer
 });
 const initialState = {
     userList:[
@@ -44,7 +48,28 @@ const initialState = {
             id:1,
             name:"Avatar"
         }
-    ]
+    ],
+    productList:[
+        {
+            id:1,
+            name:"Mi TV",
+            stock:15,
+            image:'url1'
+        },
+        {
+            id:2,
+            name:"one plus nord",
+            stock:10,
+            image:'url2'
+        },
+        {
+            id:3,
+            name:"pixel 4a",
+            stock:0,
+            image:'url3'
+        },
+    ],
+    cartList:[]
 }
 const middleware = [thunk];
 const store = createStore(allReducers,initialState,compose(applyMiddleware(...middleware),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))

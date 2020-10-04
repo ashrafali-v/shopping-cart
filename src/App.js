@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import Films from './components/films';
-import Users from './components/users';
+import Products from './components/products/products';
+import Users from './components/user/users';
 import Navbar from './components/navbar';
 import Profile from './components/profile';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+library.add(faCheckSquare, faCoffee)
 function App() {
   return (
     <Router>
@@ -13,7 +15,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/films" component={Films} />
+          <Route path="/products" component={Products} />
           <Route path="/users" exact component={Users} />
           <Route path="/users/:id" component={Profile} />
         </Switch>

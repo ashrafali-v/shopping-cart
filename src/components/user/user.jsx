@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
-import {deleteUser} from '../store/actions/userActions'
+import {deleteUser} from '../../store/actions/userActions'
 const User = (props) => {
     const deleteUserAction = (userId) => {
       props.deleteUser(userId);
