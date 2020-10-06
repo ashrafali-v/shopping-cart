@@ -1,7 +1,40 @@
 .App {
   text-align: center;
 }
-
+.wrapper, html, body {
+  height:100%;
+  margin:0;
+}
+/* .wrapper {
+  display: flex;
+  flex-direction: column;
+} */
+/* .product-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.cart-list{
+  display: flex;
+  flex-direction: row;
+} */
+.product-main{
+  display: flex;
+  flex-direction: row;
+}
+.store-items{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card{
+  width:300px;
+  margin: 2px;
+}
+.product-main div{
+  margin: 1%;
+}
 nav {
   display: flex;
   justify-content: space-around;

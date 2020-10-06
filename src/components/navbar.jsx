@@ -18,7 +18,6 @@ function Navbar(props) {
     }
     return (
         <nav>
-            <div><FontAwesomeIcon icon={faBell} />{userList.length}</div>
             <span><FontAwesomeIcon icon={faShoppingBag} />{cartList.length}</span>
             <ul className="nav-links">
                 <img className="navbar-logo" src={logo} alt="logo" />  

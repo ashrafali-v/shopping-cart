@@ -54,20 +54,37 @@ const initialState = {
             id:1,
             name:"Mi TV",
             stock:15,
-            image:'url1'
+            image:"url1",
+            price:12000
         },
         {
             id:2,
             name:"one plus nord",
             stock:10,
-            image:'url2'
+            image:"url2",
+            price:29000
         },
         {
             id:3,
             name:"pixel 4a",
             stock:0,
-            image:'url3'
+            image:"url3",
+            price:26000
         },
+        {
+            id:4,
+            name:"pixel 4a",
+            stock:0,
+            image:"url3",
+            price:26000
+        },
+        {
+            id:5,
+            name:"pixel 4a",
+            stock:0,
+            image:"url3",
+            price:26000
+        }
     ],
     cartList:[]
 }

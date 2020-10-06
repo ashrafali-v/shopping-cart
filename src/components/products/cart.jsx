@@ -14,10 +14,10 @@ function Cart(props) {
                         {props.name}
                     </div>
                     <div>
-                        {props.stock}
+                      <span>Price: {props.price}</span> * <span>{props.count}</span>
                     </div>
                 </div>
-                <button variant="primary" onClick={()=>removeFromCart(props.index)}>Remove</button>
+                <button className="btn btn-danger" variant="primary" onClick={()=>removeFromCart(props.index)}>Remove</button>
             </li>
         </React.Fragment>
   );

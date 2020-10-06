@@ -11,7 +11,7 @@ library.add(faCheckSquare, faCoffee)
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="wrapper">
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
