@@ -4,12 +4,14 @@ import filmActionReducer from './reducers/filmAction';
 import productActionReducer from './reducers/productReducer';
 import cartActionReducer from './reducers/cartReducer';
 import thunk from 'redux-thunk'
+import { loginReducer } from './reducers/login.reducer';
 
 const allReducers = combineReducers({
     userList:userActionReducer,
     filmList:filmActionReducer,
     productList:productActionReducer,
-    cartList:cartActionReducer
+    cartList:cartActionReducer,
+    login:loginReducer
 });
 const initialState = {
     userList:[

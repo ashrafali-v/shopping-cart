@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/*---Form-----*/
+
+.signin-form{
+  max-width: 60rem;
+  margin:0 auto;
+}
+.signin-form > div{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.signin-form label{
+  margin:1rem 0;
+  display: block;;
+}
+.signin-form .signin-button{
+  background-color: orange;
+}

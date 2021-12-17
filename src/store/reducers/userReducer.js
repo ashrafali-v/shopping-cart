@@ -1,8 +1,18 @@
 const users = JSON.parse(localStorage.getItem('userList'));
 const userActionReducer = (state={},{type,payload}) =>{
     switch(type){
+        case 'USER_SIGNIN_REQUEST':
+            return {loading:true}
+        case 'USER_SIGNIN_SUCCESS':
+            return {loading:false,userInfo:payload};
+        case 'USER_SIGNIN_ERROR':
+            return {loading:false,error:payload}
+        case 'USER_SIGNIN_FAIL':
+            return {loading:false,error:payload}
+        case 'USER_SIGNOUT':
+            return {};
         case 'GET_USER':
-            return JSON.parse(JSON.stringify(payload))
+            return JSON.parse(JSON.stringify(payload));
         case 'UPDATE':
             // return state.map((user)=>{
             //     if(user.id != payload.id){

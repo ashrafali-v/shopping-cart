@@ -3,7 +3,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import User from './user';
 import '../../App.css';
 import {connect} from 'react-redux'
-import store from '../../store'
+import store from '../../store/index'
 import {fetch_users,insertUser,updateUser} from '../../store/actions/userActions'
 function Users(props) {
   const { userList } = props;

@@ -5,6 +5,7 @@ import Product from './product';
 import Cart from './cart';
 function Products(props) {
   const { products, cartList } = props;
+  console.log(products);
   const [total, setTotal] = useState(1000);
   const totalPrice = () =>{
    return cartList.reduce((total, item) => {
@@ -24,7 +25,8 @@ function Products(props) {
                   ))
                 }
               </div>
-            )}
+            )
+          }
         </div>
         <div className='cart-list flex-container'>
           {
@@ -41,7 +43,8 @@ function Products(props) {
                   <span>Total Cart value:{totalPrice()}</span>
                 </React.Fragment>
               )
-            )}
+            )
+          }
         </div>
       </div>
     </React.Fragment>

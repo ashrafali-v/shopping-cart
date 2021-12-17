@@ -7,17 +7,36 @@ import Profile from './components/profile';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import SigninScreen from './components/registration/register';
+import { connect } from 'react-redux';
+import { useEffect } from 'react';
 library.add(faCheckSquare, faCoffee)
-function App() {
+const App = (isLogin) => {
+  useEffect(()=>{
+    if(isLogin == true){
+        //history.push(redirect);
+        console.log(isLogin);
+    }else{
+      console.log(isLogin);
+    }
+},[isLogin])
   return (
     <Router>
       <div className="wrapper">
-        <Navbar />
+      {isLogin ? ( <Navbar />):('')}
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/products" component={Products} />
-          <Route path="/users" exact component={Users} />
-          <Route path="/users/:id" component={Profile} />
+          {!isLogin ? (
+            <Route path="/" component={SigninScreen} />
+          ):(
+            <React.Fragment>
+              <Route path="/" exact component={Products} />
+              <Route path="/products" component={Products} />
+              <Route path="/users" exact component={Users} />
+              <Route path="/users/:id" component={Profile} />
+              <Route path="/signin" component={SigninScreen} />
+            </React.Fragment>
+          )
+          }
         </Switch>
       </div>
     </Router>
@@ -28,5 +47,7 @@ const Home = () => (
     <h1>Home page</h1>
   </div>
 );
-
-export default App;
+const mapStateToProps = ({login:{isLogin}}) =>({
+  isLogin,
+})
+export default connect(mapStateToProps)(App);
